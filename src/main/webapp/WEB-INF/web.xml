@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>Megacitycab</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.cabbooking.servlet.RegisterServlet</servlet-class>
+    </servlet>
+  
+ <servlet>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>com.cabbooking.servlet.LogoutServlet</servlet-class>
+</servlet>
+
+<servlet>
+        <servlet-name>AddVehicleServlet</servlet-name>
+        <servlet-class>com.cabbooking.servlet.AddVehicleServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddVehicleServlet</servlet-name>
+        <url-pattern>/addVehicle</url-pattern>
+    </servlet-mapping>
+
+    <!-- Servlet for Displaying Vehicles -->
+    <servlet>
+        <servlet-name>ViewVehiclesServlet</servlet-name>
+        <servlet-class>com.cabbooking.servlet.ViewVehiclesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewVehiclesServlet</servlet-name>
+        <url-pattern>/viewVehicles</url-pattern>
+    </servlet-mapping>
+
+    <!-- Session Timeout (Optional) -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+    <!-- JSP Default Servlet (Handles JSP Pages) -->
+    <servlet>
+        <servlet-name>jsp</servlet-name>
+        <servlet-class>org.apache.jasper.servlet.JspServlet</servlet-class>
+        <init-param>
+            <param-name>modificationTestInterval</param-name>
+            <param-value>1</param-value>
+        </init-param>
+        <load-on-startup>3</load-on-startup>
+    </servlet>
+ <servlet>
+    <servlet-name>VehicleDetailsServlet</servlet-name>
+    <servlet-class>com.cabbooking.servlet.VehicleDetailsServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>VehicleDetailsServlet</servlet-name>
+    <url-pattern>/vehicleDetails</url-pattern>
+</servlet-mapping>
+ 
+ 
+ <servlet>
+    <servlet-name>BookVehicleServlet</servlet-name>
+    <servlet-class>com.cabbooking.servlet.BookVehicleServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>BookVehicleServlet</servlet-name>
+    <url-pattern>/BookVehicleServlet</url-pattern>
+</servlet-mapping>
+
+
+
+
+</web-app> 
+
